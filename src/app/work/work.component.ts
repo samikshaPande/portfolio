@@ -30,7 +30,7 @@ export class WorkComponent implements OnInit {
   workList = [
     {
       position: "Application Developer", cd:"ibm", company: "IBM India", duration: "2021-2022", 
-      logo:"./../../assets/images/ibm1.png", projectName:"Services Procurement@IBM", 
+      logo:"./../../assets/images/IBM_logo.png", projectName:"Services Procurement@IBM", 
       projectDesc:"SP@IBM is transitioning  the legacy CSA application to a microservices, angular and cloud-based solution enhancing functionality. CSA is a global application to facilitate the procurement of services by allowing requesters and buyers to interact with pre-configured suppliers directly. Requesters will be able to create their requests, submit it to suppliers, review the suppliers' responses and select the response and bridge it to Bond and for financial approvals and PO processing.",
       task: [
         "Responsible for development of scalable, reusable and multi-browser compatible single page web applications.",
@@ -41,7 +41,7 @@ export class WorkComponent implements OnInit {
     },
     {
       position: "Associate Developer", cd:"cts", company: "Cognizant Technology Solutions", 
-      duration: "2019-2021", logo:"./../../assets/images/CTST.png", projectName:"Collateral Management System and Margin Pledge Application", 
+      duration: "2019-2021", logo:"./../../assets/images/CTS_logo.png", projectName:"Collateral Management System and Margin Pledge Application", 
       projectDesc:"Collateral Management System is a web-based system allowing Asset Management Company and Bank to manage and keep track of the collaterals pledged with them. It enables banks to record and retrieve a wide range of collateral details. And Margin Pledge Application allows investors to use stocks as securities to avail loan.",
       task: [
         "Responsible for end to end Development of application, development of backend services, integration of services at frontend, development of user interface.",
@@ -53,7 +53,7 @@ export class WorkComponent implements OnInit {
     },
     {
       position: "System Engineer", cd:"tcs", company: "Tata Consulatancy Services", duration: "2016-2019",
-      logo:"./../../assets/images/TCS.png",
+      logo:"./../../assets/images/TCS_logo.png",
       subCompany: [{
         projectName:"PIM Bemmaning Application ", 
         projectDesc:"PostNord is Swedish and Danish government owned company which offers communications and logistics solutions to, from and within the Nordic region. PIM Bemmaning Web Application helps Postnord to manage the data of the company's employees.",
