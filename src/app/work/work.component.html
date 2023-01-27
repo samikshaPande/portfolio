@@ -1,0 +1,80 @@
+<main>
+    <legend>Work Experience :</legend>
+
+    <div class="content-wrapper">
+        <p>I have a proven track record of delivering successful projects and possess a strong ability to problem solve,
+            adapt to new technologies and work well within a team environment. </p>
+        <p>Click on below tiles to know more in detail.</p>
+        <p>References available upon request.</p>
+        <div class="row">
+            <div class="card" *ngFor="let item of workList, index as i" (click)="openModal(item)">
+                <div class="col-md">
+                    <div class="row">
+                        <div class="col-12"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                fill="#1971C2" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16"
+                                style="z-index:100; font-weight:bolder; float:right; margin:-10px -10px 0 0">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg></div>
+                    </div>
+                    <img src="{{item.logo}}" height="150" width="200" alt="{{item.company}}">
+                    <div class="text-duration">{{item.duration}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}"
+    [ngClass]="{'modal--close':displayStyle=='none'}">
+    <div class="modal-dialog" role="document" *ngIf="modalData">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span style="width: 90%;">
+                    <h3 class="modal-title">{{modalData.company}} </h3>
+                    <h4 class="modal-title">{{modalData.position}} | {{modalData.duration}}</h4>
+                </span>
+                <span style="width:2%; height:100%;font-size: 12px; position: relative; top:0px">
+                    <button (click)="closePopup()" type="button" class="btn-close btn-close-white"
+                        aria-label="Close"></button>
+                </span>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="modalData.subCompany; else company">
+                    <div *ngFor="let subC of modalData.subCompany">
+                        <div class="row row-item">
+                            <div class="col-lg" style="margin:auto; text-align: justify;">
+                                <h4>Project:</h4>
+                                <h5 style="font-weight: bold;"> {{subC.projectName}}</h5>
+                                <p>{{subC.projectDesc}}</p>
+                            </div>
+                            <div class="col-lg">
+                                <h5>Roles and Resposiblities :</h5>
+                                <ul *ngFor="let task of subC.task" class="">
+                                    <li>{{task}}</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <ng-template #company>
+                    <div class="row row-item">
+                        <div class="col-lg" style="margin:auto; text-align: justify;">
+                            <h4>Project:</h4>
+                            <h5 style="font-weight: bold;">{{modalData.projectName}}</h5>
+                            <p>{{modalData.projectDesc}}</p>
+                        </div>
+                        <div class="col-lg">
+                            <h5>Roles and Resposiblities : </h5>
+                            <ul *ngFor="let task of modalData.task" class="">
+                                <li>{{task}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

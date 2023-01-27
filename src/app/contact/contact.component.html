@@ -1,0 +1,46 @@
+<main>
+    <legend>Contact Me:</legend>            
+         
+    <div class="row">           
+        <div class="form-holder col-md-8 col-lg-6">
+            <form [formGroup]="contactForm" class="requires-validation" novalidate *ngIf="!isSuccess">
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control mt-3" type="text" formControlName="name" placeholder="Name">
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-control mt-3" type="email" formControlName="email" placeholder="Email"
+                            [ngClass]="{'error':contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)}"
+                            required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input class="form-control" type="subject" formControlName="subject" placeholder="Subject">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <textarea style="width: 100%;" type="message" formControlName="message" placeholder="Message"
+                            required rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="form-button" >
+                    <button id="submit" type="submit" class="btn-gradient" (click)="sendMail()" [disabled]="contactForm.invalid">Send
+                        Mail</button>
+                    <div class="spinner-border text-warning" role="status" *ngIf="submitting"></div>
+                </div>
+            </form>
+
+            <div class="alert-success res-msg" role="alert"  *ngIf="isSuccess">
+                <div>
+                    Thanks for your interest in my profile. Will get in touch
+                    with you soon.
+                </div>
+                <div class="close" (click)="closePopup()">X</div>
+            </div>
+
+        </div>
+    </div>
+</main>

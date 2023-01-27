@@ -1,0 +1,27 @@
+main {
+    // top: 10%;
+    width: 80%;
+    text-align: justify;
+}
+
+legend{
+    padding-bottom: 20px;
+}
+
+.box {
+    flex: 1;
+    width: 20vw;
+    height: 30vh;
+    border: 1px solid red;
+    margin: 0.5rem;
+
+}
+
+@media (max-width:400px){
+    main{
+        width: 90%;
+        padding:0 20px;
+        left:2%;
+        margin:auto;
+    }
+}
